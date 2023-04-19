@@ -26,10 +26,10 @@ import messages from '@/utils/locales/messages';
 //ScrollTop
 import VueScrollTo from 'vue-scrollto';
 const i18n = createI18n({
-    locale: 'en',
-    messages: messages,
-    silentTranslationWarn: true,
-    silentFallbackWarn: true
+	locale: 'en',
+	messages: messages,
+	silentTranslationWarn: true,
+	silentFallbackWarn: true,
 });
 
 const app = createApp(App);
@@ -42,8 +42,8 @@ app.use(VCalendar, {});
 app.use(VueTablerIcons);
 // app.use(print);
 app.use(VueRecaptcha, {
-    siteKey: '6LdzqbcaAAAAALrGEZWQHIHUhzJZc8O-KSTdTTh_',
-    alterDomain: false // default: false
+	siteKey: '6LdzqbcaAAAAALrGEZWQHIHUhzJZc8O-KSTdTTh_',
+	alterDomain: false, // default: false
 });
 app.use(i18n);
 app.use(Maska);
@@ -52,6 +52,6 @@ app.use(vuetify).mount('#app');
 //ScrollTop Use
 // app.use(VueScrollTo);
 app.use(VueScrollTo, {
-    duration: 1000,
-    easing: "ease"
-})
+	duration: 1000,
+	easing: 'ease',
+});

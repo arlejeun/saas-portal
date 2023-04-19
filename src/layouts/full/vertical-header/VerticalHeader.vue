@@ -17,82 +17,81 @@ const showSearch = ref(false);
 const appsdrawer = ref(false);
 const priority = ref(customizer.setHorizontalLayout ? 0 : 0);
 function searchbox() {
-    showSearch.value = !showSearch.value;
+	showSearch.value = !showSearch.value;
 }
 watch(priority, (newPriority) => {
-    priority.value = newPriority;
+	priority.value = newPriority;
 });
-
 </script>
 
 <template>
-    <v-app-bar elevation="0" :priority="priority" height="64" color="background"  id="top">
-        <v-btn
-            class="hidden-md-and-down "
-            icon
-            color="primary"
-            variant="text"
-            @click.stop="customizer.SET_MINI_SIDEBAR(!customizer.mini_sidebar)"
-        >
-            <Menu2Icon size="25"  />
-        </v-btn>
-        <v-btn class="hidden-lg-and-up" icon variant="text" @click.stop="customizer.SET_SIDEBAR_DRAWER" size="small">
-            <Menu2Icon size="25" />
-        </v-btn>
+	<v-app-bar elevation="0" :priority="priority" height="64" color="background" id="top">
+		<v-btn
+			class="hidden-md-and-down"
+			icon
+			color="primary"
+			variant="text"
+			@click.stop="customizer.SET_MINI_SIDEBAR(!customizer.mini_sidebar)"
+		>
+			<Menu2Icon size="25" />
+		</v-btn>
+		<v-btn class="hidden-lg-and-up" icon variant="text" @click.stop="customizer.SET_SIDEBAR_DRAWER" size="small">
+			<Menu2Icon size="25" />
+		</v-btn>
 
-        <!-- ---------------------------------------------- -->
-        <!-- Search part -->        <!-- ---------------------------------------------- -->
-        
-            <Searchbar />
-     
+		<!-- ---------------------------------------------- -->
+		<!-- Search part -->
+		<!-- ---------------------------------------------- -->
 
-        <!---/Search part -->
+		<Searchbar />
 
-        <!-- ---------------------------------------------- -->
-        <!-- Mega menu -->
-        <!-- ---------------------------------------------- -->
-        <!-- <div class="hidden-md-and-down">
+		<!---/Search part -->
+
+		<!-- ---------------------------------------------- -->
+		<!-- Mega menu -->
+		<!-- ---------------------------------------------- -->
+		<!-- <div class="hidden-md-and-down">
             <Navigations />
         </div> -->
-        <v-spacer />
-        <!-- ---------------------------------------------- -->
-        <!---right part -->
-        <!-- ---------------------------------------------- -->
-        <!-- ---------------------------------------------- -->
-        <!-- translate -->
-        <!-- ---------------------------------------------- -->
-        
-        <LanguageDD />
+		<v-spacer />
+		<!-- ---------------------------------------------- -->
+		<!---right part -->
+		<!-- ---------------------------------------------- -->
+		<!-- ---------------------------------------------- -->
+		<!-- translate -->
+		<!-- ---------------------------------------------- -->
 
-        <!-- ---------------------------------------------- -->
-        <!-- ShoppingCart -->
-        <!-- ---------------------------------------------- -->
-        <v-btn icon variant="text" color="primary" to="">
-            <v-badge  color="error" :content="0">
-                <ShoppingCartIcon stroke-width="1.5" size="24" />
-            </v-badge>
-        </v-btn>
+		<LanguageDD />
 
-        <!-- ---------------------------------------------- -->
-        <!-- MessagesDD -->
-        <!-- ---------------------------------------------- -->
-        <!-- <MessagesDD /> -->
-        <!-- ---------------------------------------------- -->
-        <!-- Notification -->
-        <!-- ---------------------------------------------- -->
-        <NotificationDD />
-        <!-- ---------------------------------------------- -->
-        <!-- User Profile -->
-        <!-- ---------------------------------------------- -->
-        <div class="ml-2">
-            <ProfileDD />
-        </div>
-    </v-app-bar>
+		<!-- ---------------------------------------------- -->
+		<!-- ShoppingCart -->
+		<!-- ---------------------------------------------- -->
+		<v-btn icon variant="text" color="primary" to="">
+			<v-badge color="error" :content="0">
+				<ShoppingCartIcon stroke-width="1.5" size="24" />
+			</v-badge>
+		</v-btn>
 
-    <!-- ---------------------------------------------- -->
-    <!-- Right Sidebar -->
-    <!-- ---------------------------------------------- -->
-    <v-navigation-drawer v-model="appsdrawer" location="right" temporary>
-        <RightMobileSidebar />
-    </v-navigation-drawer>
+		<!-- ---------------------------------------------- -->
+		<!-- MessagesDD -->
+		<!-- ---------------------------------------------- -->
+		<!-- <MessagesDD /> -->
+		<!-- ---------------------------------------------- -->
+		<!-- Notification -->
+		<!-- ---------------------------------------------- -->
+		<NotificationDD />
+		<!-- ---------------------------------------------- -->
+		<!-- User Profile -->
+		<!-- ---------------------------------------------- -->
+		<div class="ml-2">
+			<ProfileDD />
+		</div>
+	</v-app-bar>
+
+	<!-- ---------------------------------------------- -->
+	<!-- Right Sidebar -->
+	<!-- ---------------------------------------------- -->
+	<v-navigation-drawer v-model="appsdrawer" location="right" temporary>
+		<RightMobileSidebar />
+	</v-navigation-drawer>
 </template>
